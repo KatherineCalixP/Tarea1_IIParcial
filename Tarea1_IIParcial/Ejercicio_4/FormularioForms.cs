@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace Ejercicio_4
         public FormularioForms()
         {
             InitializeComponent();
+        }
+        UsuarioDatos userDatos = new UsuarioDatos();
+        private void FormularioForms_Load(object sender, EventArgs e)
+        {
+            LlenarDataGrid();
+        }
+
+        private async void LlenarDataGrid()
+        {
+            UsuariosDataGridView.DataSource = await userDatos.DevolverListaAsync();
         }
     }
 }

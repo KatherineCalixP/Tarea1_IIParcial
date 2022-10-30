@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,5 +41,31 @@ namespace Datos
             }
             return validar;
         }
+
+        public async Task<DataTable> DevolverListaAsync()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT * FROM usuario;";
+
+                using (MySqlConnection _conexion = new MySqlConnection(CadenaConexion.Cadena))
+                {
+                    await _conexion.OpenAsync();
+                    using (MySqlCommand comando = new MySqlCommand(sql, _conexion))
+                    {
+                        comando.CommandType = System.Data.CommandType.Text;
+                        MySqlDataReader dr = (MySqlDataReader)await comando.ExecuteReaderAsync();
+                        dt.Load(dr);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return dt;
+        }
     }
+
+
 }
