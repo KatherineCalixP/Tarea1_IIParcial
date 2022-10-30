@@ -50,5 +50,10 @@ namespace Ejercicio_4
                 MessageBox.Show("Los Datos ingresados son incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void CancelarButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

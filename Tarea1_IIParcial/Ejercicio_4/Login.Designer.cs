@@ -102,6 +102,7 @@
             this.CancelarButton.Text = "Cancelar";
             this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CancelarButton.UseVisualStyleBackColor = true;
+            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
             // AceptarButton
             // 
