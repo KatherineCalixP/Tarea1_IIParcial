@@ -46,14 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormularioForms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormularioForms.Designer.cs">
+      <DependentUpon>FormularioForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormularioForms.resx">
+      <DependentUpon>FormularioForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +88,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aceptar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{c2034290-7664-450d-a10c-c8406ee23d36}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
