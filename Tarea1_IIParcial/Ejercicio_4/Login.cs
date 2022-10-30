@@ -47,7 +47,7 @@ namespace Ejercicio_4
             }
             else
             {
-                MessageBox.Show("Los Datos ingresados son incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Los datos ingresados son incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
